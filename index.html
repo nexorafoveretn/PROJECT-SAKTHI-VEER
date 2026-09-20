@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project SakthiVeer | Smart AI Circular Waste-to-Energy Ecosystem</title>
+<meta name="description" content="Project SakthiVeer — Smart AI Circular Waste-to-Energy Ecosystem (SCWES), transforming waste into energy, fuels, materials, fertilizer and recovered water.">
+<style>
+:root{
+  --bg:#06100d; --bg2:#0b1713; --card:rgba(15,34,27,.78); --line:rgba(145,255,199,.16);
+  --green:#57f39a; --cyan:#52e0ff; --gold:#ffd166; --text:#ecfff5; --muted:#a9c4b7;
+  --shadow:0 20px 60px rgba(0,0,0,.35); --radius:24px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 80% 10%,rgba(82,224,255,.10),transparent 30%),radial-gradient(circle at 15% 20%,rgba(87,243,154,.10),transparent 28%),var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(6,16,13,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.4px}
+.logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--cyan));color:#04110b;font-weight:1000;box-shadow:0 0 30px rgba(87,243,154,.25)}
+.links{display:flex;gap:20px;align-items:center}
+.links a{font-size:14px;color:var(--muted)} .links a:hover{color:var(--green)}
+.btn{display:inline-flex;padding:12px 18px;border-radius:14px;border:1px solid rgba(87,243,154,.35);background:rgba(87,243,154,.10);color:var(--text);font-weight:800}
+.hero{min-height:100vh;padding:150px 0 90px;display:grid;place-items:center;position:relative;overflow:hidden}
+.gridglow{position:absolute;inset:0;background-image:linear-gradient(rgba(87,243,154,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(87,243,154,.035) 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center;position:relative}
+.eyebrow{color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(48px,7vw,86px);line-height:.95;margin:18px 0}
+h1 span{background:linear-gradient(90deg,var(--green),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:720px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-card{padding:26px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,44,34,.9),rgba(8,21,16,.72));border-radius:30px;box-shadow:var(--shadow)}
+.orbit{height:390px;display:grid;place-items:center;position:relative}
+.core{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,var(--green),#11663e 50%,#07120e 70%);box-shadow:0 0 70px rgba(87,243,154,.35);font-weight:1000;font-size:23px}
+.ring{position:absolute;border:1px solid rgba(82,224,255,.35);border-radius:50%;animation:spin 18s linear infinite}
+.r1{width:260px;height:260px}.r2{width:350px;height:350px;animation-duration:28s;animation-direction:reverse}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
+.d1{top:54px;right:92px}.d2{bottom:56px;left:90px;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+@keyframes spin{to{transform:rotate(360deg)}}
+section{padding:95px 0}
+.section-head{max-width:760px;margin-bottom:40px}.section-head h2{font-size:clamp(32px,4vw,52px);margin:8px 0}.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:24px;border:1px solid var(--line);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card h3{margin-top:0}.card p,.card li{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:22px;border-radius:20px;background:linear-gradient(145deg,rgba(87,243,154,.10),rgba(82,224,255,.04));border:1px solid var(--line)}
+.stat b{display:block;font-size:30px;color:var(--green)} .stat span{font-size:13px;color:var(--muted)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.step{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(10,28,21,.8);min-height:145px}
+.step strong{color:var(--green);font-size:13px}.step h4{margin:10px 0 5px}.step p{font-size:13px;color:var(--muted)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px}
+table{width:100%;border-collapse:collapse;min-width:760px;background:rgba(8,21,16,.7)}
+th,td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left} th{color:var(--green);font-size:13px}td{color:var(--muted)}
+.city-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.city{position:relative;overflow:hidden}.city:after{content:"";position:absolute;inset:auto -30px -60px auto;width:150px;height:150px;background:rgba(87,243,154,.08);border-radius:50%}
+.city .number{font-size:40px;font-weight:1000;color:var(--cyan)}
+.notice{padding:20px;border-left:3px solid var(--gold);background:rgba(255,209,102,.07);border-radius:12px;color:#eadcae}
+footer{padding:45px 0;border-top:1px solid var(--line);color:var(--muted)}
+.mobile{display:none}
+@media(max-width:900px){.hero-grid,.cards,.city-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.links{display:none}.mobile{display:block}.orbit{height:300px}.hero{padding-top:120px}}
+@media(max-width:520px){h1{font-size:52px}.stats{grid-template-columns:1fr}.flow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container nav">
+  <a class="brand" href="#home"><div class="logo">SV</div><span>NEXORA FOVERE · SAKTHIVEER</span></a>
+  <div class="links"><a href="#problem">Problem</a><a href="#workflow">Workflow</a><a href="#tech">Technology</a><a href="#outputs">Outputs</a><a href="#impact">Impact</a><a href="#finance">Finance</a></div>
+  <a class="btn mobile" href="#contact">Explore</a>
+</div></nav>
+
+<header id="home" class="hero">
+<div class="gridglow"></div><div class="container hero-grid">
+  <div>
+    <div class="eyebrow">Smart AI Circular Waste-to-Energy Ecosystem</div>
+    <h1>Waste in.<br><span>Energy out.</span></h1>
+    <p>Project SakthiVeer proposes a closed-loop system that combines AI waste identification, robotic segregation, biological digestion, oxygen-free pyrolysis, resource recovery and advanced emission control.</p>
+    <div class="cta"><a class="btn" href="#workflow">Explore the system →</a><a class="btn" href="#cities">City feasibility</a></div>
+  </div>
+  <div class="hero-card"><div class="orbit"><div class="ring r1"></div><div class="ring r2"></div><div class="dot d1"></div><div class="dot d2"></div><div class="core">PROJECT<br>SAKTHIVEER</div></div></div>
+</div>
+</header>
+
+<section id="problem"><div class="container">
+<div class="section-head"><div class="eyebrow">Why SakthiVeer</div><h2>Turning a waste problem into a resource system.</h2><p>The project report describes open dumping as a source of odour, leachate risk, fires and environmental degradation, while cities also need dependable energy and fuels.</p></div>
+<div class="cards">
+<div class="card"><h3>🗑️ Waste</h3><p>Large municipal waste streams arrive mixed and require systematic identification and processing.</p></div>
+<div class="card"><h3>⚡ Energy</h3><p>The proposed ecosystem converts waste-derived energy streams into electricity and fuels for regional use.</p></div>
+<div class="card"><h3>♻️ Circularity</h3><p>Materials are routed toward fuels, fertilizer, recycled metals and glass, water recovery and construction products.</p></div>
+</div></div></section>
+
+<section id="workflow"><div class="container">
+<div class="section-head"><div class="eyebrow">Master workflow</div><h2>From garbage truck to useful products.</h2><p>Workflow summarized from the Project SakthiVeer submission and its technical feasibility theses.</p></div>
+<div class="flow">
+<div class="step"><strong>01</strong><h4>Collection</h4><p>Waste arrives at the facility intake bay.</p></div>
+<div class="step"><strong>02</strong><h4>AI Vision</h4><p>Cameras identify materials on conveyors.</p></div>
+<div class="step"><strong>03</strong><h4>Robotic Sort</h4><p>Robotic arms separate material streams.</p></div>
+<div class="step"><strong>04</strong><h4>Biological + Thermal</h4><p>Organics enter digestion; dry plastics enter pyrolysis.</p></div>
+<div class="step"><strong>05</strong><h4>Energy</h4><p>Biogas and thermal energy drive generation systems.</p></div>
+<div class="step"><strong>06</strong><h4>Recovery</h4><p>Water, metals, glass, fertilizer and construction products are recovered.</p></div>
+</div></div></section>
+
+<section id="tech"><div class="container">
+<div class="section-head"><div class="eyebrow">Core technologies</div><h2>The technology stack.</h2></div>
+<div class="cards">
+<div class="card"><h3>AI waste identification</h3><p>High-definition optical cameras and computer vision identify waste by visual characteristics.</p></div>
+<div class="card"><h3>Robotic segregation</h3><p>High-speed delta arms receive AI instructions and place materials into dedicated lanes.</p></div>
+<div class="card"><h3>Anaerobic digestion</h3><p>Organic waste is processed in sealed digesters to produce methane-rich biogas and digestate.</p></div>
+<div class="card"><h3>Pyrolysis</h3><p>Non-recyclable polymers are processed in oxygen-starved reactors at approximately 450–500°C.</p></div>
+<div class="card"><h3>Energy generation</h3><p>Bio-CNG engines and high-pressure steam turbines are described as generation pathways, with solar PV also included.</p></div>
+<div class="card"><h3>7-stage air purification</h3><p>Cyclone separation, scrubbing, activated carbon, ESP, ceramic filtration, catalytic conversion and stack monitoring are described.</p></div>
+</div></div></section>
+
+<section id="outputs"><div class="container">
+<div class="section-head"><div class="eyebrow">Product factory</div><h2>What SakthiVeer produces.</h2></div>
+<div class="cards">
+<div class="card"><h3>⚡ Electricity</h3><p>Generated through biogas engines, steam turbines and renewable systems.</p></div>
+<div class="card"><h3>🔥 Bio-CNG & syngas</h3><p>Clean gas streams from organic digestion and thermal processing.</p></div>
+<div class="card"><h3>🛢️ Pyrolysis oil</h3><p>Liquid hydrocarbon fuel from non-recyclable polymers.</p></div>
+<div class="card"><h3>🌱 Organic fertilizer</h3><p>Stabilized digestate converted into nutrient-rich soil conditioner.</p></div>
+<div class="card"><h3>💧 Recovered water</h3><p>Water recovered through condensation and RO/UV treatment.</p></div>
+<div class="card"><h3>🧱 Eco products</h3><p>Eco-tiles and paver blocks, plus recovered metals, glass and carbon-black products.</p></div>
+</div></div></section>
+
+<section id="impact"><div class="container">
+<div class="section-head"><div class="eyebrow">Three feasibility studies</div><h2>City-scale figures from the submitted theses.</h2><p>These are project-document figures, presented as proposed/feasibility outputs rather than independently verified operating results.</p></div>
+<div class="city-grid">
+<div class="card city"><div class="number">2,500</div><h3>TPD · Perungudi</h3><p>Proposed capacity. Net export: <b>790,760 kWh/day</b>. Residential benchmark in the thesis: <b>158,152 homes</b>.</p></div>
+<div class="card city"><div class="number">1,200</div><h3>TPD · Vellalore</h3><p>Proposed capacity. Net export: <b>377,880 kWh/day</b>. Residential benchmark in the thesis: <b>75,576 homes</b>.</p></div>
+<div class="card city"><div class="number">800</div><h3>TPD · Avaniapuram</h3><p>Proposed capacity. Net export: <b>252,040 kWh/day</b>. Residential benchmark in the thesis: <b>50,408 homes</b>.</p></div>
+</div>
+<br>
+<div class="stats">
+<div class="stat"><b>4,500,000 L</b><span>Perungudi monthly pyrolysis oil output</span></div>
+<div class="stat"><b>2,250,000 m³</b><span>Perungudi monthly Bio-CNG output</span></div>
+<div class="stat"><b>40,000</b><span>Perungudi eco-tiles / pavers per day</span></div>
+<div class="stat"><b>75,000 t</b><span>Perungudi monthly waste intake</span></div>
+</div>
+</div></section>
+
+<section id="finance"><div class="container">
+<div class="section-head"><div class="eyebrow">Perungudi financial projection</div><h2>Illustrative project economics.</h2><p>Figures below are reproduced from the uploaded expenditure / financial projection report.</p></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Stream</th><th>Daily production</th><th>Daily projected profit</th><th>Annual projected profit</th></tr></thead>
+<tbody>
+<tr><td>Pyrolysis Oil</td><td>312,500 L</td><td>₹1,87,50,000</td><td>₹675,00,00,000</td></tr>
+<tr><td>Bio-CNG</td><td>75,00,000 m³*</td><td>₹56,25,000</td><td>₹202,50,00,000</td></tr>
+<tr><td>Carbon Ink</td><td>12.5 tonnes</td><td>₹15,00,000</td><td>₹54,00,00,000</td></tr>
+<tr><td>Eco Paving Blocks</td><td>40,000 units</td><td>₹30,00,000</td><td>₹108,00,00,000</td></tr>
+<tr><td>Recycled Metals + Glass</td><td>50 tonnes</td><td>₹19,00,000</td><td>₹68,40,00,000</td></tr>
+<tr><td>Recycled Water</td><td>4,00,000 L</td><td>₹4,00,000</td><td>₹14,40,00,000</td></tr>
+<tr><td>Electricity</td><td>790,760 units</td><td>₹94,89,120</td><td>₹341,60,83,200</td></tr>
+<tr><td>Organic Fertilizer</td><td>250 tonnes</td><td>₹50,00,000</td><td>₹180,00,00,000</td></tr>
+</tbody></table></div>
+<br>
+<div class="stats">
+<div class="stat"><b>₹4.926 Cr</b><span>Reported combined projected profit per day</span></div>
+<div class="stat"><b>₹147 Cr</b><span>Reported combined projected profit per month</span></div>
+<div class="stat"><b>₹1,773.91 Cr</b><span>Reported combined projected profit per year</span></div>
+<div class="stat"><b>₹2,000 Cr</b><span>Reported expected investment</span></div>
+</div>
+<p class="notice">*The financial report contains a Bio-CNG production figure that differs from the technical thesis' stated volumetric output. The website preserves the financial report's figure rather than silently reconciling the documents.</p>
+</div></section>
+
+<section id="cities"><div class="container">
+<div class="section-head"><div class="eyebrow">Tamil Nadu roadmap</div><h2>A scalable deployment concept.</h2><p>The main project submission proposes a phased rollout beginning with Chennai (Perungudi), Coimbatore and Madurai, followed by district expansion and compact rural units.</p></div>
+<div class="cards">
+<div class="card"><h3>Phase 1 · Major cities</h3><p>Three pilot plants: Chennai (Perungudi), Coimbatore and Madurai.</p></div>
+<div class="card"><h3>Phase 2 · Districts</h3><p>Proposed deployment across all 38 district headquarters with municipal collection links.</p></div>
+<div class="card"><h3>Phase 3 · Rural</h3><p>Compact solar-powered Micro-SakthiVeer units for village panchayats and local organic waste.</p></div>
+</div></div></section>
+
+<section id="contact"><div class="container">
+<div class="hero-card">
+<div class="eyebrow">Project identity</div><h2>PROJECT SAKTHIVEER</h2>
+<p>Smart AI Circular Waste-to-Energy Ecosystem (SCWES)<br>Zero Waste · Zero Pollution · Maximum Energy</p>
+<p style="color:var(--muted)">Prepared and presented by M. S. Tejesh & Team, Class 11, Sri Chaitanya Educational Institutions, Tamil Nadu, India — as stated in the submitted project document.</p>
+<a class="btn" href="#home">Back to top ↑</a>
+</div></div></section>
+
+<footer><div class="container">© Project SakthiVeer · Website concept based on the uploaded Project SakthiVeer submission, technical feasibility theses and expenditure report.</div></footer>
+</body></html>
